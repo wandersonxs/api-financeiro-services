@@ -15,3 +15,10 @@ select * from categorias;
 
 -- DELETE
 delete from categorias where id = 2
+
+
+/* COMANDOS MAVEN
+
+mvn clean package
+
+ */
