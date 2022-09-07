@@ -1,0 +1,2 @@
+insert into categorias (nome, descricao) values ('JOGOS', 'Todo item relacionado a compra ou venda de jogos');
+insert into categorias (nome, descricao) values ('FILMES', 'Todo item relacionado a compra ou venda de filmes');
