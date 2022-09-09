@@ -24,6 +24,25 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Adicionar Categoria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
