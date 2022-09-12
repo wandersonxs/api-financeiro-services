@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,7 +33,6 @@ public class CategoriaController {
 
     }
 
-
     @RequestMapping(value = "/categorias", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<CategoriaResponseDto> addCategoria(@RequestBody CategoriaRequestDto categoriaRequestDto) {
 
@@ -41,5 +41,12 @@ public class CategoriaController {
 
     }
 
+    @RequestMapping(value = "/categorias/{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<CategoriaResponseDto> updateCategoria(@PathVariable(name = "id" ) Long id, @RequestBody CategoriaRequestDto categoriaRequestDto) {
+
+        CategoriaResponseDto categoriaResponseDto = categoriaService.updateCategoria(id , categoriaRequestDto);
+        return new ResponseEntity(categoriaResponseDto, HttpStatus.OK);
+
+    }
 
 }

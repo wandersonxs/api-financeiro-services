@@ -38,5 +38,22 @@ public class CategoriaImpl implements CategoriaService {
         return categoriaResponseDto;
     }
 
+    @Override
+    public CategoriaResponseDto updateCategoria(Long id, CategoriaRequestDto categoriaRequestDto) {
+        CategoriaResponseDto categoriaResponseDto = new CategoriaResponseDto();
+
+        Categoria categoria = categoriaRepository.findById(id).get();
+
+        categoria.setNome(categoriaRequestDto.getNome());
+        categoria.setDescricao(categoriaRequestDto.getDescricao());
+
+        Categoria categoriaSaved = categoriaRepository.save(categoria);
+
+        categoriaResponseDto.setId(categoriaSaved.getId());
+        categoriaResponseDto.setNome(categoriaSaved.getNome());
+        categoriaResponseDto.setDescricao(categoriaSaved.getDescricao());
+
+        return categoriaResponseDto;
+    }
 
 }

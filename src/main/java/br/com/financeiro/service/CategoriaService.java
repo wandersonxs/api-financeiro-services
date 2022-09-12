@@ -13,4 +13,5 @@ public interface CategoriaService {
 
     CategoriaResponseDto addCategoria(CategoriaRequestDto categoriaRequestDto);
 
+    CategoriaResponseDto updateCategoria(Long id, CategoriaRequestDto categoriaRequestDto);
 }
