@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CategoriaImpl implements CategoriaService {
@@ -54,6 +55,25 @@ public class CategoriaImpl implements CategoriaService {
         categoriaResponseDto.setDescricao(categoriaSaved.getDescricao());
 
         return categoriaResponseDto;
+    }
+
+    @Override
+    public CategoriaResponseDto getCategoriaById(Long id) {
+        CategoriaResponseDto categoriaResponseDto = new CategoriaResponseDto();
+        Optional<Categoria> categoria = categoriaRepository.findById(id);
+
+        if(categoria.isPresent()){
+            categoriaResponseDto.setId(categoria.get().getId());
+            categoriaResponseDto.setNome(categoria.get().getNome());
+            categoriaResponseDto.setDescricao(categoria.get().getDescricao());
+        }
+
+        return categoriaResponseDto;
+    }
+
+    @Override
+    public void deleteCategoriaById(Long id) {
+        categoriaRepository.deleteById(id);
     }
 
 }

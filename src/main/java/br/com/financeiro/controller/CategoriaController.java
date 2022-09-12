@@ -49,4 +49,20 @@ public class CategoriaController {
 
     }
 
+    @RequestMapping(value = "/categorias/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<CategoriaResponseDto> getCategoriaById(@PathVariable(name = "id" ) Long id) {
+
+        CategoriaResponseDto categoriaResponseDto = categoriaService.getCategoriaById(id);
+        return new ResponseEntity(categoriaResponseDto, HttpStatus.OK);
+
+    }
+
+    @RequestMapping(value = "/categorias/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> deleteCategoriaById(@PathVariable(name = "id" ) Long id) {
+
+        categoriaService.deleteCategoriaById(id);
+        return new ResponseEntity("EXCLUÍDO COM SUCESSO", HttpStatus.OK);
+
+    }
+
 }
