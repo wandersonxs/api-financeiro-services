@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LancamentoImpl implements LancamentoService {
@@ -50,6 +51,21 @@ public class LancamentoImpl implements LancamentoService {
         lancamentoResponseDto.setId(lancamentoSaved.getId());
         lancamentoResponseDto.setNome(lancamentoSaved.getNome());
         lancamentoResponseDto.setDescricao(lancamentoSaved.getDescricao());
+
+        return lancamentoResponseDto;
+
+    }
+
+    public LancamentoResponseDto getByIdLancamento(Long id) {
+
+        LancamentoResponseDto lancamentoResponseDto = new LancamentoResponseDto();
+        Optional<Lancamento> lancamento = lancamentoRepository.findById(id);
+
+        if (lancamento.isPresent()) {
+            lancamentoResponseDto.setId(lancamento.get().getId());
+            lancamentoResponseDto.setNome(lancamento.get().getNome());
+            lancamentoResponseDto.setDescricao(lancamento.get().getDescricao());
+        }
 
         return lancamentoResponseDto;
 
