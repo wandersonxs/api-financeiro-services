@@ -50,5 +50,12 @@ public class LancamentoController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/lancamentos/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<LancamentoResponseDto> getByIdLancamento(@PathVariable(value = "id") Long id) {
+
+        LancamentoResponseDto lancamento = lancamentoService.getByIdLancamento(id);
+        return ResponseEntity.ok(lancamento);
+
+    }
 
 }
