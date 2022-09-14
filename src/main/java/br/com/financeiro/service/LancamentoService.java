@@ -14,4 +14,6 @@ public interface LancamentoService {
 
     LancamentoResponseDto updateLancamento(Long id, LancamentoRequestDto lancamentoRequestDto);
 
+    void deleteLancamento(Long id);
+
 }

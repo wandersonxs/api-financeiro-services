@@ -43,5 +43,12 @@ public class LancamentoController {
 
     }
 
+    @RequestMapping(value = "/lancamentos/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> deleteLancamento(@PathVariable(value = "id") Long id) {
+
+        lancamentoService.deleteLancamento(id);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
 
 }
