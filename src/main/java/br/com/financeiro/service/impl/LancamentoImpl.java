@@ -55,4 +55,10 @@ public class LancamentoImpl implements LancamentoService {
 
     }
 
+    public void deleteLancamento(Long id) {
+
+        lancamentoRepository.deleteById(id);
+
+    }
+
 }
