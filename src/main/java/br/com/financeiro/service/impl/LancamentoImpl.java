@@ -35,6 +35,24 @@ public class LancamentoImpl implements LancamentoService {
         lancamentoResponseDto.setDescricao(lancamentoSaved.getDescricao());
 
         return lancamentoResponseDto;
+
+    }
+
+    public LancamentoResponseDto updateLancamento(Long id, LancamentoRequestDto lancamentoRequestDto) {
+
+        Lancamento lancamento = lancamentoRepository.findById(id).get();
+        lancamento.setNome(lancamentoRequestDto.getNome());
+        lancamento.setDescricao(lancamentoRequestDto.getDescricao());
+
+        Lancamento lancamentoSaved = lancamentoRepository.save(lancamento);
+
+        LancamentoResponseDto lancamentoResponseDto = new LancamentoResponseDto();
+        lancamentoResponseDto.setId(lancamentoSaved.getId());
+        lancamentoResponseDto.setNome(lancamentoSaved.getNome());
+        lancamentoResponseDto.setDescricao(lancamentoSaved.getDescricao());
+
+        return lancamentoResponseDto;
+
     }
 
 }

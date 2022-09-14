@@ -12,5 +12,6 @@ public interface LancamentoService {
 
     LancamentoResponseDto addLancamento(LancamentoRequestDto lancamentoRequestDto);
 
+    LancamentoResponseDto updateLancamento(Long id, LancamentoRequestDto lancamentoRequestDto);
 
 }
