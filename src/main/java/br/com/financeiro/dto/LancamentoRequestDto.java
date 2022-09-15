@@ -13,4 +13,6 @@ public class LancamentoRequestDto {
 
     private String descricao;
 
+    private Integer tipoDespesa;
+
 }

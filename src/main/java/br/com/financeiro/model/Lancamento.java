@@ -20,4 +20,7 @@ public class Lancamento {
     @Column(name = "descricao", nullable = false)
     private String descricao;
 
+    @Column(name = "tipo_despesa", nullable = false)
+    private Integer tipoDespesa;
+
 }

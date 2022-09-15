@@ -36,14 +36,19 @@ select * from lancamentos;
 
 
 
-/*CREATE TABLE lancamentos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    tipo_despesa VARCHAR(255) NOT NULL,
-    nome VARCHAR(255) NOT NULL,
-    descricao VARCHAR(255) NOT NULL,
-    valor decimal(15,2) NOT NULL,
-    data date NOT NULL,
-    situacao VARCHAR(255) NOT NULL,
-    categoria VARCHAR(255) NOT NULL
+CREATE TABLE lancamentos (
+                             id INT AUTO_INCREMENT PRIMARY KEY,
+                             tipo_despesa INT NOT NULL,
+                             nome VARCHAR(255) NOT NULL,
+                             descricao VARCHAR(255) NOT NULL,
+                             valor decimal(15,2) NOT NULL,
+                             data date NOT NULL,
+                             situacao INT NOT NULL,
+                             categoria INT NOT NULL
 )  ENGINE=INNODB;
-*/
+
+ALTER TABLE lancamentos
+    ADD  tipo_despesa INT NOT NULL DEFAULT 1;
+
+ALTER TABLE lancamentos
+DROP  tipo_despesa;

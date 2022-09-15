@@ -15,4 +15,6 @@ public class LancamentoResponseDto {
 
     private String descricao;
 
+    private Integer tipoDespesa;
+
 }
