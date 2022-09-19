@@ -3,7 +3,7 @@ package br.com.financeiro.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Data
 @Entity
@@ -27,6 +27,7 @@ public class Lancamento {
     @Column(name = "valor", nullable = false)
     private Double valor;
 
+    @Temporal(value = TemporalType.DATE)
     @Column(name = "data", nullable = false)
     private Date data;
 
