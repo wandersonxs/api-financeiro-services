@@ -15,4 +15,6 @@ public class LancamentoRequestDto {
 
     private Integer tipoDespesa;
 
+    private Double valor;
+
 }

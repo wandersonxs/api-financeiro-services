@@ -29,6 +29,7 @@ public class LancamentoImpl implements LancamentoService {
         lancamento.setNome(lancamentoRequestDto.getNome());
         lancamento.setDescricao(lancamentoRequestDto.getDescricao());
         lancamento.setTipoDespesa(lancamentoRequestDto.getTipoDespesa());
+        lancamento.setValor(lancamentoRequestDto.getValor());
 
         Lancamento lancamentoSaved = lancamentoRepository.save(lancamento);
 
@@ -37,6 +38,8 @@ public class LancamentoImpl implements LancamentoService {
         lancamentoResponseDto.setNome(lancamentoSaved.getNome());
         lancamentoResponseDto.setDescricao(lancamentoSaved.getDescricao());
         lancamentoResponseDto.setTipoDespesa(lancamentoSaved.getTipoDespesa());
+        lancamentoResponseDto.setValor(lancamentoSaved.getValor());
+
         return lancamentoResponseDto;
 
     }
@@ -47,6 +50,7 @@ public class LancamentoImpl implements LancamentoService {
         lancamento.setNome(lancamentoRequestDto.getNome());
         lancamento.setDescricao(lancamentoRequestDto.getDescricao());
         lancamento.setTipoDespesa(lancamentoRequestDto.getTipoDespesa());
+        lancamento.setValor(lancamentoRequestDto.getValor());
 
         Lancamento lancamentoSaved = lancamentoRepository.save(lancamento);
 
@@ -55,6 +59,7 @@ public class LancamentoImpl implements LancamentoService {
         lancamentoResponseDto.setNome(lancamentoSaved.getNome());
         lancamentoResponseDto.setDescricao(lancamentoSaved.getDescricao());
         lancamentoResponseDto.setTipoDespesa(lancamentoSaved.getTipoDespesa());
+        lancamentoResponseDto.setValor(lancamentoSaved.getValor());
 
         return lancamentoResponseDto;
 
@@ -66,10 +71,12 @@ public class LancamentoImpl implements LancamentoService {
         Optional<Lancamento> lancamento = lancamentoRepository.findById(id);
 
         if (lancamento.isPresent()) {
+
             lancamentoResponseDto.setId(lancamento.get().getId());
             lancamentoResponseDto.setNome(lancamento.get().getNome());
             lancamentoResponseDto.setDescricao(lancamento.get().getDescricao());
             lancamentoResponseDto.setTipoDespesa(lancamento.get().getTipoDespesa());
+            lancamentoResponseDto.setValor(lancamento.get().getValor());
 
         }
 
