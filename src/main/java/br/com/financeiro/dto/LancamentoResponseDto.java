@@ -17,4 +17,6 @@ public class LancamentoResponseDto {
 
     private Integer tipoDespesa;
 
+    private Double valor;
+
 }
