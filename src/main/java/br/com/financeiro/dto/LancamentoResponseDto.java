@@ -19,4 +19,8 @@ public class LancamentoResponseDto {
 
     private Double valor;
 
+    private Integer categoria;
+
+    private Integer situacao;
+
 }

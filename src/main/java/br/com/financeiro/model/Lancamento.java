@@ -26,4 +26,10 @@ public class Lancamento {
     @Column(name = "valor", nullable = false)
     private Double valor;
 
+    @Column(name = "categoria", nullable = false)
+    private Integer categoria;
+
+    @Column(name = "situacao", nullable = false)
+    private Integer situacao;
+
 }

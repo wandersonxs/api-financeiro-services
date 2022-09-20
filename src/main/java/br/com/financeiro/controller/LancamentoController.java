@@ -48,6 +48,7 @@ public class LancamentoController {
 
         lancamentoService.deleteLancamento(id);
         return new ResponseEntity(HttpStatus.OK);
+
     }
 
     @RequestMapping(value = "/lancamentos/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)

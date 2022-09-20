@@ -17,4 +17,8 @@ public class LancamentoRequestDto {
 
     private Double valor;
 
+    private Integer situacao;
+
+    private Integer categoria;
+
 }
