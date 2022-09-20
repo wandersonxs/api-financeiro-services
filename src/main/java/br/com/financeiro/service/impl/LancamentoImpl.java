@@ -44,8 +44,8 @@ public class LancamentoImpl implements LancamentoService {
         lancamentoResponseDto.setTipoDespesa(lancamentoSaved.getTipoDespesa());
         lancamentoResponseDto.setValor(lancamentoSaved.getValor());
         lancamentoResponseDto.setData(lancamentoSaved.getData());
-        lancamento.setCategoria(lancamentoSaved.getCategoria());
-        lancamento.setSituacao(lancamentoSaved.getSituacao());
+        lancamentoResponseDto.setCategoria(lancamentoSaved.getCategoria());
+        lancamentoResponseDto.setSituacao(lancamentoSaved.getSituacao());
 
         return lancamentoResponseDto;
 
