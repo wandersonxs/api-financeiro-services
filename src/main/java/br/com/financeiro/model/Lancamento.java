@@ -31,4 +31,10 @@ public class Lancamento {
     @Column(name = "data", nullable = false)
     private Date data;
 
+    @Column(name = "categoria", nullable = false)
+    private Integer categoria;
+
+    @Column(name = "situacao", nullable = false)
+    private Integer situacao;
+
 }

@@ -23,4 +23,8 @@ public class LancamentoRequestDto {
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date data;
 
+    private Integer situacao;
+
+    private Integer categoria;
+
 }

@@ -25,4 +25,8 @@ public class LancamentoResponseDto {
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date data;
 
+    private Integer categoria;
+
+    private Integer situacao;
+
 }
