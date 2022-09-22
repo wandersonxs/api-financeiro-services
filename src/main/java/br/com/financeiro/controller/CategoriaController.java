@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -62,6 +63,14 @@ public class CategoriaController {
 
         categoriaService.deleteCategoriaById(id);
         return new ResponseEntity("EXCLUÍDO COM SUCESSO", HttpStatus.OK);
+
+    }
+
+    @RequestMapping(value = "/categorias/filter", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Categoria>> getCategorias(@RequestParam(value = "nome") String nome) {
+
+        List<Categoria> categorias = categoriaService.getCategoriasByFilter(nome);
+        return ResponseEntity.ok(categorias);
 
     }
 

@@ -18,4 +18,7 @@ public interface CategoriaService {
     CategoriaResponseDto getCategoriaById(Long id);
 
     void deleteCategoriaById(Long id);
+
+    List<Categoria> getCategoriasByFilter(String nome);
+
 }
