@@ -16,15 +16,15 @@ public class LancamentoRequestDto {
 
     private String descricao;
 
-    private Integer tipoDespesa;
+    private Integer tipoDespesaFk;
 
     private Double valor;
 
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date data;
 
-    private Integer situacao;
+    private Integer situacaoFk;
 
-    private Integer categoria;
+    private Integer categoriaFk;
 
 }
