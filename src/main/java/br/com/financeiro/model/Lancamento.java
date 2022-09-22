@@ -22,7 +22,7 @@ public class Lancamento {
     private String descricao;
 
     @Column(name = "tipo_despesa_fk", nullable = false)
-    private Integer tipoDespesaFk;
+    private Integer tipoDespesa;
 
     @Column(name = "valor", nullable = false)
     private Double valor;
@@ -32,9 +32,9 @@ public class Lancamento {
     private Date data;
 
     @Column(name = "categoria_fk", nullable = false)
-    private Integer categoriaFk;
+    private Integer categoria;
 
     @Column(name = "situacao_fk", nullable = false)
-    private Integer situacaoFk;
+    private Integer situacao;
 
 }
