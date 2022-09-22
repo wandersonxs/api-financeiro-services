@@ -76,4 +76,9 @@ public class CategoriaImpl implements CategoriaService {
         categoriaRepository.deleteById(id);
     }
 
+    @Override
+    public List<Categoria> getCategoriasByFilter(String nome) {
+        return categoriaRepository.findByNomeDescricao(nome);
+    }
+
 }

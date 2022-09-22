@@ -62,3 +62,7 @@ select l.nome nome, l.descricao descricao, l.valor valor, l.data data_lancamento
                                                                                                                                                    inner join categorias c on l.categoria_fk = c.id
                                                                                                                                                    inner join situacoes s on l.situacao_fk = s.id
                                                                                                                                                    inner join tipo_despesas td on l.tipo_despesa_fk = td.id;
+
+
+--- select * from categorias where upper(nome) = upper(:nome) or upper(descricao) = upper(:descricao)
+--- select * from lancamentos where nome = 'cinema' or descricao = 'Plano Sul América Familiar' or valor > 10000 or data > '2022-09-21'
