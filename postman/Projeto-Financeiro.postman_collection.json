@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "10313f40-3448-4211-af0f-d650c5c79111",
+		"_postman_id": "7942f66d-3bee-4429-ac72-00df443d3870",
 		"name": "Projeto-Financeiro",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "4179687"
+		"_exporter_id": "23047952"
 	},
 	"item": [
 		{
@@ -200,7 +200,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\": \"Livros\",\r\n    \"descricao\": \"Estudos\"\r\n}",
+					"raw": "{\r\n    \"nome\": \"Conta de água\",\r\n    \"descricao\": \"Despesa com água\",\r\n    \"tipoDespesa\": 1,\r\n    \"valor\": 50.39,\r\n    \"data\": \"2022-09-17\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -228,7 +228,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\": \"Netflix\",\r\n    \"descricao\": \"Entretenimento - filmes/séries\"\r\n}",
+					"raw": "{\r\n    \"nome\": \"TV\",\r\n    \"descricao\": \"Manutenção\",\r\n    \"tipoDespesa\": 0,\r\n    \"valor\": 100,\r\n    \"data\": \"2022-09-08\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -236,7 +236,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/lancamentos/4",
+					"raw": "http://localhost:8080/lancamentos/10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -244,7 +244,7 @@
 					"port": "8080",
 					"path": [
 						"lancamentos",
-						"4"
+						"10"
 					]
 				}
 			},
@@ -256,7 +256,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/lancamentos/3",
+					"raw": "http://localhost:8080/lancamentos/10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -264,7 +264,7 @@
 					"port": "8080",
 					"path": [
 						"lancamentos",
-						"3"
+						"10"
 					]
 				}
 			},
@@ -276,7 +276,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/lancamentos/3",
+					"raw": "http://localhost:8080/lancamentos/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -284,6 +284,122 @@
 					"port": "8080",
 					"path": [
 						"lancamentos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Todos Tipos de Despesas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tiposDespesas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiposDespesas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Tipo de Despesa por Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tiposDespesas/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiposDespesas",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Tipo de Despesa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Pendente\",\r\n    \"descricao\": \"Pendente\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiposDespesas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiposDespesas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Tipo de Despesa",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"A receber\",\r\n    \"descricao\": \"A receber\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiposDespesas/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiposDespesas",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Tipo de Despesa por Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tiposDespesas/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiposDespesas",
 						"3"
 					]
 				}

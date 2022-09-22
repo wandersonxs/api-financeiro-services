@@ -21,8 +21,8 @@ public class Lancamento {
     @Column(name = "descricao", nullable = false)
     private String descricao;
 
-    @Column(name = "tipo_despesa", nullable = false)
-    private Integer tipoDespesa;
+    @Column(name = "tipo_despesa_fk", nullable = false)
+    private Integer tipoDespesaFk;
 
     @Column(name = "valor", nullable = false)
     private Double valor;
@@ -31,10 +31,10 @@ public class Lancamento {
     @Column(name = "data", nullable = false)
     private Date data;
 
-    @Column(name = "categoria", nullable = false)
-    private Integer categoria;
+    @Column(name = "categoria_fk", nullable = false)
+    private Integer categoriaFk;
 
-    @Column(name = "situacao", nullable = false)
-    private Integer situacao;
+    @Column(name = "situacao_fk", nullable = false)
+    private Integer situacaoFk;
 
 }
