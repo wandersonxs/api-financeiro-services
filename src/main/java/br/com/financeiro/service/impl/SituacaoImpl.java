@@ -4,6 +4,7 @@ package br.com.financeiro.service.impl;
 
 import br.com.financeiro.dto.SituacaoRequestDto;
 import br.com.financeiro.dto.SituacaoResponseDto;
+import br.com.financeiro.model.Categoria;
 import br.com.financeiro.model.Situacao;
 import br.com.financeiro.repository.SituacaoRepository;
 import br.com.financeiro.service.SituacaoService;
@@ -13,7 +14,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
     @Service
-    public class SituacaoImpl implements SituacaoService{
+    public class SituacaoImpl implements SituacaoService {
 
         @Autowired
         private SituacaoRepository situacaoRepository;
@@ -22,6 +23,7 @@ import org.springframework.stereotype.Service;
         public List<Situacao> getTodasSituacoes() {
             return situacaoRepository.findAll();
         }
+
         @Override
         public SituacaoResponseDto addSituacao(SituacaoRequestDto situacaoRequestDto) {
 
@@ -47,7 +49,7 @@ import org.springframework.stereotype.Service;
             situacao.setNome(situacaoRequestDto.getNome());
             situacao.setDescricao(situacaoRequestDto.getDescricao());
 
-           Situacao situacaoSaved = situacaoRepository.save(situacao);
+            Situacao situacaoSaved = situacaoRepository.save(situacao);
 
             SituacaoResponseDto situacaoResponseDto = new SituacaoResponseDto();
             situacaoResponseDto.setId(situacaoSaved.getId());
@@ -70,11 +72,15 @@ import org.springframework.stereotype.Service;
             }
             return situacaoResponseDto;
         }
+
         @Override
         public void deleteSituacao(Long id) {
 
             situacaoRepository.deleteById(id);
 
         }
-    }
 
+        public List<Situacao> getSituacaoByFilter(String nome, String descricao) {
+            return situacaoRepository.findByNomeDescricao(nome, descricao);
+        }
+    }
