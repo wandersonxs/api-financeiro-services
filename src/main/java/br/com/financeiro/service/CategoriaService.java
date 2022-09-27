@@ -19,6 +19,6 @@ public interface CategoriaService {
 
     void deleteCategoriaById(Long id);
 
-    List<Categoria> getCategoriasByFilter(String nome);
+    List<Categoria> getCategoriasByFilter(String nome, String descricao);
 
 }

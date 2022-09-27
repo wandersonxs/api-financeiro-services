@@ -2,6 +2,7 @@ package br.com.financeiro.controller;
 
 import br.com.financeiro.dto.TipoDespesaRequestDto;
 import br.com.financeiro.dto.TipoDespesaResponseDto;
+import br.com.financeiro.model.Situacao;
 import br.com.financeiro.model.TipoDespesa;
 import br.com.financeiro.service.TipoDespesaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,7 +60,12 @@ public class TipoDespesaController {
 
     }
 
+    @RequestMapping(value = "/categorias/filter", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<TipoDespesa>> getTipoDespesa(@RequestParam(value = "nome", required = false) String nome, @RequestParam(value = "descricao", required = false) String descricao) {
+
+        List<TipoDespesa> tipoDespesa = tipoDespesaService.getTipoDespesaByFilter(nome, descricao);
+        return ResponseEntity.ok(tipoDespesa);
 
 
-
+    }
 }

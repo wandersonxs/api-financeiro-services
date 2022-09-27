@@ -43,15 +43,15 @@ public class CategoriaController {
     }
 
     @RequestMapping(value = "/categorias/{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CategoriaResponseDto> updateCategoria(@PathVariable(name = "id" ) Long id, @RequestBody CategoriaRequestDto categoriaRequestDto) {
+    public ResponseEntity<CategoriaResponseDto> updateCategoria(@PathVariable(name = "id") Long id, @RequestBody CategoriaRequestDto categoriaRequestDto) {
 
-        CategoriaResponseDto categoriaResponseDto = categoriaService.updateCategoria(id , categoriaRequestDto);
+        CategoriaResponseDto categoriaResponseDto = categoriaService.updateCategoria(id, categoriaRequestDto);
         return new ResponseEntity(categoriaResponseDto, HttpStatus.OK);
 
     }
 
     @RequestMapping(value = "/categorias/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<CategoriaResponseDto> getCategoriaById(@PathVariable(name = "id" ) Long id) {
+    public ResponseEntity<CategoriaResponseDto> getCategoriaById(@PathVariable(name = "id") Long id) {
 
         CategoriaResponseDto categoriaResponseDto = categoriaService.getCategoriaById(id);
         return new ResponseEntity(categoriaResponseDto, HttpStatus.OK);
@@ -59,7 +59,7 @@ public class CategoriaController {
     }
 
     @RequestMapping(value = "/categorias/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> deleteCategoriaById(@PathVariable(name = "id" ) Long id) {
+    public ResponseEntity<Void> deleteCategoriaById(@PathVariable(name = "id") Long id) {
 
         categoriaService.deleteCategoriaById(id);
         return new ResponseEntity("EXCLUÍDO COM SUCESSO", HttpStatus.OK);
@@ -67,9 +67,9 @@ public class CategoriaController {
     }
 
     @RequestMapping(value = "/categorias/filter", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Categoria>> getCategorias(@RequestParam(value = "nome") String nome) {
+    public ResponseEntity<List<Categoria>> getCategorias(@RequestParam(value = "nome", required = false) String nome,@RequestParam(value = "descricao",required = false) String descricao) {
 
-        List<Categoria> categorias = categoriaService.getCategoriasByFilter(nome);
+        List<Categoria> categorias = categoriaService.getCategoriasByFilter(nome,descricao);
         return ResponseEntity.ok(categorias);
 
     }

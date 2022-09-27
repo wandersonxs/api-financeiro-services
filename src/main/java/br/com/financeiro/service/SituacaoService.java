@@ -2,6 +2,7 @@ package br.com.financeiro.service;
 
 import br.com.financeiro.dto.SituacaoRequestDto;
 import br.com.financeiro.dto.SituacaoResponseDto;
+import br.com.financeiro.model.Categoria;
 import br.com.financeiro.model.Situacao;
 
 import java.util.List;
@@ -17,5 +18,7 @@ public interface SituacaoService {
     SituacaoResponseDto getByIdSituacao(Long id);
 
     void deleteSituacao(Long id);
+
+    List<Situacao> getSituacaoByFilter(String nome, String descricao);
 
 }
