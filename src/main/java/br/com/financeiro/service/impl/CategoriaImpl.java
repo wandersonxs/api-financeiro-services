@@ -78,7 +78,7 @@ public class CategoriaImpl implements CategoriaService {
 
     @Override
     public List<Categoria> getCategoriasByFilter(String nome, String descricao) {
-        return categoriaRepository.findByNomeDescricao(nome, descricao);
+        return categoriaRepository.findByNomeDescricao(nome,descricao);
     }
 
 }

@@ -2,6 +2,7 @@ package br.com.financeiro.service.impl;
 
 import br.com.financeiro.dto.TipoDespesaRequestDto;
 import br.com.financeiro.dto.TipoDespesaResponseDto;
+import br.com.financeiro.model.Situacao;
 import br.com.financeiro.model.TipoDespesa;
 import br.com.financeiro.repository.TipoDespesaRepository;
 import br.com.financeiro.service.TipoDespesaService;
@@ -82,4 +83,7 @@ public class TipoDespesaImpl implements TipoDespesaService {
 
     }
 
+    public List<TipoDespesa> getTipoDespesaByFilter(String nome, String descricao) {
+        return tipoDespesaRepository.findByNomeDescricao(nome, descricao);
+    }
 }
