@@ -64,7 +64,7 @@ import java.util.List;
 
         }
 
-        @RequestMapping(value = "/categorias/filter", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+        @RequestMapping(value = "/situacao/filter", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
         public ResponseEntity<List<Situacao>> getSituacao(@RequestParam(value = "nome", required = false) String nome, @RequestParam(value = "descricao", required = false) String descricao) {
 
             List<Situacao> situacao = situacaoService.getSituacaoByFilter(nome, descricao);

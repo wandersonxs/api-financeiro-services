@@ -60,7 +60,7 @@ public class TipoDespesaController {
 
     }
 
-    @RequestMapping(value = "/categorias/filter", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/tipoDespesa/filter", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<TipoDespesa>> getTipoDespesa(@RequestParam(value = "nome", required = false) String nome, @RequestParam(value = "descricao", required = false) String descricao) {
 
         List<TipoDespesa> tipoDespesa = tipoDespesaService.getTipoDespesaByFilter(nome, descricao);
