@@ -67,7 +67,7 @@ public class LancamentoController {
     public ResponseEntity<List<Lancamento>> getLancamentos(@RequestParam(value = "nome", required = false) String nome,
                                                            @RequestParam(value = "descricao", required = false) String descricao,
                                                            @RequestParam(value = "valor", required = false) Double valor,
-                                                           @RequestParam(value = "data", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date data) {
+                                                           @RequestParam(value = "data", required = false) @DateTimeFormat( pattern = "yyyy-MM-dd") Date data) {
 
         List<Lancamento> lancamentos = lancamentoService.getLancamentosByFilter(nome, descricao, valor, data);
         return ResponseEntity.ok(lancamentos);
