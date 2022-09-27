@@ -10,7 +10,7 @@ import java.util.List;
 public interface LancamentoRepository extends JpaRepository<Lancamento, Long> {
 
     @Query(value = "select * from lancamentos where upper(nome) = upper(:nome) or upper(descricao) = upper(:descricao)" +
-            "or upper(valor) = upper(:valor) or upper(data) = upper(:data)", nativeQuery = true)
+            "or valor = :valor or data = :data", nativeQuery = true)
     List<Lancamento> findByNomeDescricaoValor(String nome, String descricao, Double valor, Date data);
 
 }
