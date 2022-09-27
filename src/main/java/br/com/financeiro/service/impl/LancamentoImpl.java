@@ -108,4 +108,8 @@ public class LancamentoImpl implements LancamentoService {
 
     }
 
+    public List<Lancamento> getLancamentosByFilter(String nome, String descricao, Double valor, java.util.Date data) {
+        return lancamentoRepository.findByNomeDescricaoValor(nome, descricao, valor, data);
+    }
+
 }
