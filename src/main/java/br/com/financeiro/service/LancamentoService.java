@@ -4,6 +4,7 @@ import br.com.financeiro.dto.LancamentoRequestDto;
 import br.com.financeiro.dto.LancamentoResponseDto;
 import br.com.financeiro.model.Lancamento;
 
+import java.util.Date;
 import java.util.List;
 
 public interface LancamentoService {
@@ -17,5 +18,7 @@ public interface LancamentoService {
     LancamentoResponseDto getByIdLancamento(Long id);
 
     void deleteLancamento(Long id);
+
+    List<Lancamento> getLancamentosByFilter(String nome, String descricao, Double valor, Date data);
 
 }

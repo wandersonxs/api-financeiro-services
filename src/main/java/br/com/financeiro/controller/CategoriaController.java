@@ -67,9 +67,10 @@ public class CategoriaController {
     }
 
     @RequestMapping(value = "/categorias/filter", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Categoria>> getCategorias(@RequestParam(value = "nome") String nome) {
+    public ResponseEntity<List<Categoria>> getCategorias(@RequestParam(value = "nome", required = false) String nome,
+                                                         @RequestParam(value = "descricao", required = false) String descricao) {
 
-        List<Categoria> categorias = categoriaService.getCategoriasByFilter(nome);
+        List<Categoria> categorias = categoriaService.getCategoriasByFilter(nome, descricao);
         return ResponseEntity.ok(categorias);
 
     }
