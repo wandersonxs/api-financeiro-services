@@ -32,8 +32,10 @@ public class Lancamento {
     @Column(name = "data", nullable = false)
     private Date data;
 
-    @Column(name = "categoria_fk", nullable = false)
-    private Integer categoria;
+//    @Column(name = "categoria_fk", nullable = false)
+    @OneToOne
+    @JoinColumn(name = "categoria_fk", referencedColumnName = "id")
+    private Categoria categoria;
 
     @Column(name = "situacao_fk", nullable = false)
     private Integer situacao;
