@@ -20,7 +20,8 @@ public class LancamentoImpl implements LancamentoService {
 
     @Override
     public List<Lancamento> getTodosLancamentos() {
-        return lancamentoRepository.findAll();
+        List<Lancamento> lancamentos =  lancamentoRepository.findAll();
+        return lancamentos;
     }
 
     public LancamentoResponseDto addLancamento(LancamentoRequestDto lancamentoRequestDto) {
@@ -33,7 +34,7 @@ public class LancamentoImpl implements LancamentoService {
         lancamento.setValor(lancamentoRequestDto.getValor());
         lancamento.setData(lancamentoRequestDto.getData());
         lancamento.setSituacao(lancamentoRequestDto.getSituacao());
-        lancamento.setCategoria(lancamentoRequestDto.getCategoria());
+//        lancamento.setCategoria(lancamentoRequestDto.getCategoria());
 
         Lancamento lancamentoSaved = lancamentoRepository.save(lancamento);
 
@@ -44,7 +45,7 @@ public class LancamentoImpl implements LancamentoService {
         lancamentoResponseDto.setTipoDespesa(lancamentoSaved.getTipoDespesa());
         lancamentoResponseDto.setValor(lancamentoSaved.getValor());
         lancamentoResponseDto.setData(lancamentoSaved.getData());
-        lancamentoResponseDto.setCategoria(lancamentoSaved.getCategoria());
+//        lancamentoResponseDto.setCategoriaId(lancamentoSaved.getCategoria());
         lancamentoResponseDto.setSituacao(lancamentoSaved.getSituacao());
 
         return lancamentoResponseDto;
@@ -62,7 +63,7 @@ public class LancamentoImpl implements LancamentoService {
         lancamento.setTipoDespesa(lancamentoRequestDto.getTipoDespesa());
         lancamento.setValor(lancamentoRequestDto.getValor());
         lancamento.setData(oldDate);
-        lancamento.setCategoria(lancamentoRequestDto.getCategoria());
+//        lancamento.setCategoria(lancamentoRequestDto.getCategoria());
         lancamento.setSituacao(lancamentoRequestDto.getSituacao());
 
         Lancamento lancamentoSaved = lancamentoRepository.save(lancamento);
@@ -74,7 +75,7 @@ public class LancamentoImpl implements LancamentoService {
         lancamentoResponseDto.setTipoDespesa(lancamentoSaved.getTipoDespesa());
         lancamentoResponseDto.setValor(lancamentoSaved.getValor());
         lancamentoResponseDto.setData(lancamentoSaved.getData());
-        lancamentoResponseDto.setCategoria(lancamentoSaved.getCategoria());
+//        lancamentoResponseDto.setCategoriaId(lancamentoSaved.getCategoria());
         lancamentoResponseDto.setSituacao(lancamentoSaved.getSituacao());
 
         return lancamentoResponseDto;
@@ -95,7 +96,7 @@ public class LancamentoImpl implements LancamentoService {
             lancamentoResponseDto.setValor(lancamento.get().getValor());
             lancamentoResponseDto.setData(lancamento.get().getData());
             lancamentoResponseDto.setSituacao(lancamento.get().getSituacao());
-            lancamentoResponseDto.setCategoria(lancamento.get().getCategoria());
+//            lancamentoResponseDto.setCategoriaId(lancamento.get().getCategoria());
         }
 
         return lancamentoResponseDto;
